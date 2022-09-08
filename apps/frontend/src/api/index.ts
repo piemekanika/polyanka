@@ -6,7 +6,7 @@ const getUrl = (endpoint: string) => baseUrl + endpoint
 const api = {
 
     getShops(): Promise<ShopList> {
-        return fetch(getUrl('get-shops')).then(r => r.json())
+        return fetch(getUrl('shop-list')).then(r => r.json())
     },
 }
 

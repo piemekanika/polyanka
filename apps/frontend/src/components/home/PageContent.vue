@@ -1,12 +1,14 @@
 <script lang="ts" setup="">
 import {onMounted} from "vue";
-import {api} from "../../api";
+import { useStoreShops } from "../../stores/shops";
+
+const shopStore = useStoreShops();
 
 onMounted(() => {
-    api.getShops()
+  shopStore.load()
 })
 </script>
 
 <template>
-    index
+    {{ shopStore.shops }}
 </template>
