@@ -1,12 +1,12 @@
-<script lang="ts" setup="">
-import {onMounted} from "vue";
-import { useStoreShops } from "../../stores/shops";
+<script lang="ts" setup>
+import { onMounted } from 'vue';
+import { useStoreShops } from '../../stores/shops';
 
 const shopStore = useStoreShops();
 
 onMounted(() => {
-  shopStore.load()
-})
+    shopStore.load();
+});
 </script>
 
 <template>
