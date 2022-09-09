@@ -1,16 +1,16 @@
 {
-  "name": "polyanka",
-  "version": "0.0.1",
-  "license": "MIT",
-  "scripts": {
-    "serve-all": "nx run-many --target=serve --projects=frontend,backend"
-  },
-  "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "nx": "14.6.5",
-    "@nrwl/cli": "14.6.5",
-    "@nrwl/workspace": "14.6.5",
-    "typescript": "~4.7.2"
-  }
+    "name": "polyanka",
+    "version": "0.0.1",
+    "license": "MIT",
+    "scripts": {
+        "serve-all": "nx run-many --target=serve --projects=frontend,backend"
+    },
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+        "nx": "14.6.5",
+        "@nrwl/cli": "14.6.5",
+        "@nrwl/workspace": "14.6.5",
+        "typescript": "~4.7.2"
+    }
 }
