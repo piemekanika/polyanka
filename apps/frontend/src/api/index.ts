@@ -11,7 +11,7 @@ interface Api {
 const api: Api = {};
 
 api.getShops = createApiMethodWithQueryParams<undefined, ShopList>({
-    url: 'shop-list',
+    url: 'shops',
     method: 'get',
 });
 

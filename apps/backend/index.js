@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000;
 const { faker } = require('@faker-js/faker')
 const cors = require('cors')
 
@@ -9,11 +9,11 @@ faker.setLocale('ru')
 app.use(cors())
 
 app.get('/', (req, res) => {
-    res.send('Hello World!!!')
+    res.send('The server is working.')
 })
 
-require('./endpoints/shop-list')(app)
+require('./endpoints/shops')(app)
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Polyanka backend is listening on port ${port}`)
 })
