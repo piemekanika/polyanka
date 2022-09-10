@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="text-lg">
+    <div class="text-4xl font-header">
         Полянка
     </div>
 </template>

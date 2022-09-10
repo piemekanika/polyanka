@@ -8,7 +8,7 @@ const shopStore = useStoreShops();
 <template>
     <Shop
         v-for="shop in shopStore.shops"
-        :key="shop.name"
+        :key="shop.id"
         :shop="shop"
     ></Shop>
 </template>

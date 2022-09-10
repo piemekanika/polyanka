@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { Shop } from '../../dto';
 import Button from '../ui/Button.vue';
+import Badge from '../ui/Badge.vue';
 
 const props = defineProps<{ shop: Shop }>();
 </script>
 
 <template>
-    <div class="text-left my-5 p-4 rounded-md border">
-        <div class="font-medium text-lg">
+    <div class="bg-white text-left my-5 p-4 rounded-md shadow-lg">
+        <div class="text-lg font-bold">
             {{ props.shop.name }}
         </div>
 
@@ -15,12 +16,23 @@ const props = defineProps<{ shop: Shop }>();
             {{ props.shop.description }}
         </div>
 
-        <div class="mt-4 mb-6 flex">
+        <div class="my-4 flex">
             <div
-                v-for="n in 3"
+                v-for="photo in props.shop.photos"
                 class="rounded-md mr-2 cursor-pointer"
-                style="width: 100px; height: 100px; background-color: gray;"
+                style="width: 140px; height: 140px; background-color: gray;"
+                :style="{ backgroundImage: `url(${photo.url})` }"
             ></div>
+        </div>
+
+        <div class="my-6 flex">
+            <Badge
+                v-for="badge in props.shop.badges"
+                :key="badge.label"
+                :color="badge.color"
+                :label="badge.label"
+                class="mr-2"
+            />
         </div>
 
         <div class="mt-4">

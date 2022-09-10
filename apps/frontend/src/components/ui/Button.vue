@@ -1,12 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div
-        class="
-            py-1 px-2 text-center uppercase border rounded-md
-            cursor-pointer text-sm w-auto
-        "
-    >
+    <div class="btn">
         <slot />
     </div>
 </template>
+
+<style lang="scss">
+.btn {
+    background-color: #546A7B;
+}
+</style>

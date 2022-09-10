@@ -1,11 +1,10 @@
-<script lang="ts" setup="">
-/* ... */
+<script lang="ts" setup>
 import Footer from './default/Footer.vue';
 import Header from './default/Header.vue';
 </script>
 
 <template>
-    <div>
+    <div class="font-sans">
         <div>
             <Header></Header>
         </div>
