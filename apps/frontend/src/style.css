@@ -35,3 +35,14 @@ h1 {
     padding: 2rem;
     text-align: center;
 }
+
+@media (max-width: 500px) {
+    #app {
+        padding-top: 1rem;
+
+        padding-left: .5rem;
+        padding-right: .5rem;
+
+        max-width: calc(100% - 1rem);
+    }
+}
