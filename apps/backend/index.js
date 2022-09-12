@@ -4,6 +4,8 @@ const port = process.env.PORT || 3000;
 const { faker } = require('@faker-js/faker')
 const cors = require('cors')
 
+require('dotenv').config()
+
 faker.setLocale('ru')
 
 app.use(cors())
