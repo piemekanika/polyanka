@@ -12,21 +12,23 @@ function goToShop() {
 
 <template>
     <div class="bg-white text-left my-5 p-4 rounded-md shadow-lg">
-        <div class="text-lg font-bold">
+        <div class="sm:text-lg text-2xl font-bold">
             {{ props.shop.name }}
         </div>
 
-        <div class="opacity-70">
+        <div class="opacity-70 text-lg sm:text-base">
             {{ props.shop.description }}
         </div>
 
-        <div class="my-4 flex">
-            <div
-                v-for="photo in props.shop.photos"
-                class="rounded-md mr-2 cursor-pointer"
-                style="width: 140px; height: 140px; background-color: gray;"
-                :style="{ backgroundImage: `url(${photo.url})` }"
-            ></div>
+        <div class="my-4 overflow-x-scroll">
+            <div class="flex min-w-[min-content]">
+                <div
+                    v-for="photo in props.shop.photos"
+                    class="rounded-md mr-2 cursor-pointer"
+                    style="width: 150px; height: 200px; background-color: lightgray;"
+                    :style="{ backgroundImage: `url(${photo.url})` }"
+                ></div>
+            </div>
         </div>
 
         <div class="my-6 flex">
