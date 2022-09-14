@@ -12,11 +12,25 @@ function goToShop() {
 
 <template>
     <div class="bg-white text-left my-5 p-4 rounded-md shadow-lg">
-        <div class="sm:text-lg text-2xl font-bold">
-            {{ props.shop.name }}
+        <div class="flex">
+            <div class="grow lg:text-lg text-2xl font-bold">
+                {{ props.shop.name }}
+            </div>
+
+            <div class="flex items-baseline lg:text-lg text-2xl">
+                <div class="self-center text-base mr-1">
+                    ⭐
+                </div>
+
+                {{ props.shop.rate }}
+
+                <div class="lg:text-sm text-base">
+                    /5
+                </div>
+            </div>
         </div>
 
-        <div class="opacity-70 text-lg sm:text-base">
+        <div class="opacity-70 text-lg lg:text-base">
             {{ props.shop.description }}
         </div>
 
