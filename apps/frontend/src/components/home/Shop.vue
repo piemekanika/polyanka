@@ -20,7 +20,7 @@ function goToShop() {
             {{ props.shop.description }}
         </div>
 
-        <div class="my-4 overflow-x-scroll">
+        <div class="my-4 overflow-x-auto">
             <div class="flex min-w-[min-content]">
                 <div
                     v-for="photo in props.shop.photos"
