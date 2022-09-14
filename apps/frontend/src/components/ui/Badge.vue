@@ -13,7 +13,7 @@ const classList = computed(() => {
 
 <template>
     <div
-        class="rounded-full font-bold w-[fit-content] py-1 px-4"
+        class="rounded-full font-bold w-[fit-content] py-1 px-4 select-none"
         :class="classList"
     >
         {{ props.label }}
