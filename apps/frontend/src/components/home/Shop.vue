@@ -4,6 +4,10 @@ import Button from '../ui/Button.vue';
 import Badge from '../ui/Badge.vue';
 
 const props = defineProps<{ shop: Shop }>();
+
+function goToShop() {
+    window.open(props.shop.shopLink, '_blank')?.focus();
+}
 </script>
 
 <template>
@@ -36,7 +40,7 @@ const props = defineProps<{ shop: Shop }>();
         </div>
 
         <div class="mt-4">
-            <Button>
+            <Button @click="goToShop">
                 перейти на сайт магазина
             </Button>
         </div>
