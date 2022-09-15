@@ -1,39 +1,48 @@
-# Polyanka
+# Полянка
 
-An application with a very secret purpose.
+Сайт-витрина локальных брендов.
 
-## run on localhost
+## Тех. стек
 
-1. install deps
+Приложение представляет из себя монорепу с пачкой приложений:
 
-```sh
-# in project root folder
+| Название             | Задача                       | path                |
+|----------------------|------------------------------|---------------------|
+| Фронтенд             | клиентская часть приложениия | `apps/frontend`     |
+| Бэкенд               | api для клиентской части     | `apps/backend`      |
+| Телеграм-бот админки | тг бот для администрирования | `apps/tg-admin-bot` |
 
-# install nx's deps
-npm i
+## Гайд по развороту на локальном компе
 
-# go to frontend app and install deps
-cd apps/frontend
-npm i
+Предполагается, что nodejs, git, IDE и т.п. уже установлено.
 
-# go to backend app and install deps
-cd ../backend
-npm i
-```
+Так же перед началом необходимо развернуть бд и тг-бота (см. ниже).
 
-2. add `.env` file
+#### 1. Установки зависимостей.
 
-```shell
-# from project root
-cd apps/frontend
-touch .env
-```
+В корне проекта, а так же в каждом приложение `./apps/*` необходимо установить
+зависимости с помощью команды `npm i`
 
-And you need to add variables from `.env.example`
-
-2. run all apps
+#### 2. Запуск проекта
 
 ```shell
-# run both backend and frontend
+# в корне проекта
+
 npm run serve-all
 ```
+
+### Разворот базы
+
+После разворота базы в ней должна быть таблица `shops` с колонками
+
+| column     | type             |
+|------------|------------------|
+| `id`       | `serial`         |
+| `bodyjson` | `jsonb not null` |
+
+### Создание бота для разработки
+
+Для разработки нужен отдельный телеграм-бот. Для себя его можно зарегистрировать
+с помощью [@BotFather](https://t.me/BotFather)
+
+От него нужно будет взять токен и запихнуть его в `apps/tg-admin-bot/.env`.
