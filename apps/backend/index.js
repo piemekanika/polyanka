@@ -11,6 +11,8 @@ app.get('/', (req, res) => {
     res.send('The server is working.');
 });
 
+app.use('/f', express.static('static-assets'));
+
 require('./endpoints/shops')(app);
 
 app.listen(port, () => {
