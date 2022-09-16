@@ -8,4 +8,8 @@ module.exports = {
         return pool.query('select bodyjson from shops order by cast(bodyjson->>\'id\' as int)')
             .then(r => r.rows.map(e => e.bodyjson))
     },
+    getTypes() {
+        return pool.query(`select distinct bodyjson->>'type' as type from shops`)
+            .then(r => r.rows.map(e => e.type));
+    }
 };

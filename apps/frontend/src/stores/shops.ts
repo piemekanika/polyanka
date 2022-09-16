@@ -6,6 +6,7 @@ export const useStoreShops = defineStore('shops', {
     state() {
         return {
             shops: ([] as ShopList['shops']),
+            types: ([] as string[])
         };
     },
     getters: {
@@ -16,6 +17,11 @@ export const useStoreShops = defineStore('shops', {
             api.getShops()
                 .then(({ shops }) => {
                     this.shops = shops;
+                })
+
+            api.getTypes()
+                .then(({ types }) => {
+                    this.types = types;
                 })
         },
     },

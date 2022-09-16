@@ -1,4 +1,4 @@
-import { ShopList } from '../dto';
+import { ShopList, TypeList } from '../dto';
 import { Api } from './types';
 import { createApiMethodWithQueryParams } from './api-builders';
 
@@ -8,5 +8,11 @@ api.getShops = createApiMethodWithQueryParams<undefined, ShopList>({
     url: 'shops',
     method: 'get',
 });
+
+api.getTypes = createApiMethodWithQueryParams<undefined, TypeList>({
+    url: 'types',
+    method: 'get',
+});
+
 
 export { api };

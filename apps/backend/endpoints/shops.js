@@ -8,4 +8,12 @@ module.exports = function (app) {
 
         res.send({ shops });
     });
+
+    
+    app.get('/types', async (req, res) => {
+
+        const types = await ShopEntity.getTypes()
+
+        res.send({ types });
+    });
 };
