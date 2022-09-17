@@ -9,11 +9,18 @@ module.exports = function (app) {
         res.send({ shops });
     });
 
-    
+
     app.get('/types', async (req, res) => {
 
         const types = await ShopEntity.getTypes()
 
         res.send({ types });
+    });
+
+    app.get('/shopByTypes', async (req, res) => {
+
+        const shops = await ShopEntity.getShopByTypes(req.params.types)
+
+        res.send({ shops });
     });
 };

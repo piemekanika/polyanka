@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia';
-import type { ShopList } from '../dto';
+import type { ShopList, TypeList } from '../dto';
 import { api } from '../api';
 
 export const useStoreShops = defineStore('shops', {
     state() {
         return {
             shops: ([] as ShopList['shops']),
-            types: ([] as string[])
+            types: ([] as TypeList[])
         };
     },
     getters: {
@@ -24,5 +24,12 @@ export const useStoreShops = defineStore('shops', {
                     this.types = types;
                 })
         },
+
+        filterByTypes(types: string[]) {
+            api.getShopsByTypes(types._rawValue)
+                .then(({shops}) => {
+                    this.shops = shops;
+                });
+        }
     },
 });

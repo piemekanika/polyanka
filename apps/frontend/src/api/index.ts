@@ -1,6 +1,6 @@
 import { ShopList, TypeList } from '../dto';
 import { Api } from './types';
-import { createApiMethodWithQueryParams } from './api-builders';
+import { createApiMethodWithQueryParams, createApiMethodWithBodyJson } from './api-builders';
 
 const api: Api = {};
 
@@ -12,6 +12,11 @@ api.getShops = createApiMethodWithQueryParams<undefined, ShopList>({
 api.getTypes = createApiMethodWithQueryParams<undefined, TypeList>({
     url: 'types',
     method: 'get',
+});
+
+api.getShopsByTypes = createApiMethodWithBodyJson<any, ShopList>({
+    url: 'shopByTypes',
+    method: 'post',
 });
 
 
