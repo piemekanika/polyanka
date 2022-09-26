@@ -26,8 +26,8 @@ export const useStoreShops = defineStore('shops', {
         },
 
         filterByTypes(types: string[]) {
-            api.getShopsByTypes(types._rawValue)
-                .then(({shops}) => {
+            api.getShopsByTypes({"types": types})
+                .then(({ shops }) => {
                     this.shops = shops;
                 });
         }

@@ -10,7 +10,7 @@ onMounted(() => {
 });
 
 function filterByType() {
-  shopStore.filterByTypes(selectedTypes)
+  shopStore.filterByTypes(selectedTypes._rawValue)
 }
 </script>
 

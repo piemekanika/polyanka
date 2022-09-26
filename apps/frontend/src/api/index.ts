@@ -14,9 +14,9 @@ api.getTypes = createApiMethodWithQueryParams<undefined, TypeList>({
     method: 'get',
 });
 
-api.getShopsByTypes = createApiMethodWithBodyJson<any, ShopList>({
+api.getShopsByTypes = createApiMethodWithQueryParams<any, ShopList>({
     url: 'shopByTypes',
-    method: 'post',
+    method: 'get',
 });
 
 

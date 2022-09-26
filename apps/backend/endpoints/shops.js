@@ -18,9 +18,12 @@ module.exports = function (app) {
     });
 
     app.get('/shopByTypes', async (req, res) => {
-
-        const shops = await ShopEntity.getShopByTypes(req.params.types)
-
+        if (req.query.types) {
+            var shops = await ShopEntity.getShopByTypes(req.query.types)
+        } else {
+            var shops = await ShopEntity.getShops()
+        }
+        
         res.send({ shops });
     });
 };

@@ -14,7 +14,10 @@ module.exports = {
     },
 
     getShopByTypes(types) {
-        return pool.query(`select bodyjson from shops where bodyjson->>'type' = ${types.toString()}  order by cast(bodyjson->>\'id\' as int)`)
+        if (typeof types != "string") var quotedAndCommaSeparated = "'" + types.join("','") + "'"
+        else  var quotedAndCommaSeparated = "'" + types + "'";
+
+        return pool.query(`select bodyjson from shops where bodyjson->>'type' IN (${quotedAndCommaSeparated})  order by cast(bodyjson->>\'id\' as int)`)
         .then(r => r.rows.map(e => e.bodyjson))
     }
 };
