@@ -8,4 +8,16 @@ module.exports = {
         return pool.query('select bodyjson from shops order by cast(bodyjson->>\'id\' as int)')
             .then(r => r.rows.map(e => e.bodyjson))
     },
+    getTypes() {
+        return pool.query(`select distinct bodyjson->>'type' as type from shops where bodyjson->>'type' is not null`)
+            .then(r => r.rows.map(e => e.type));
+    },
+
+    getShopByTypes(types) {
+        if (typeof types != "string") var quotedAndCommaSeparated = "'" + types.join("','") + "'"
+        else  var quotedAndCommaSeparated = "'" + types + "'";
+
+        return pool.query(`select bodyjson from shops where bodyjson->>'type' IN (${quotedAndCommaSeparated})  order by cast(bodyjson->>\'id\' as int)`)
+        .then(r => r.rows.map(e => e.bodyjson))
+    }
 };

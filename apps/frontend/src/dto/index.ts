@@ -20,3 +20,7 @@ export interface Photo {
 export interface ShopList {
     shops: Shop[]
 }
+
+export interface TypeList {
+    types: string[]
+}

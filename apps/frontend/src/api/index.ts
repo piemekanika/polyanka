@@ -1,11 +1,16 @@
-import { ShopList } from '../dto';
+import { ShopList, TypeList } from '../dto';
 import { Api } from './types';
-import { createApiMethodWithQueryParams } from './api-builders';
+import { createApiMethodWithQueryParams, createApiMethodWithBodyJson } from './api-builders';
 
 const api: Api = {};
 
 api.getShops = createApiMethodWithQueryParams<undefined, ShopList>({
     url: 'shops',
+    method: 'get',
+});
+
+api.getTypes = createApiMethodWithQueryParams<undefined, TypeList>({
+    url: 'types',
     method: 'get',
 });
 
