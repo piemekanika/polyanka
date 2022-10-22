@@ -15,9 +15,11 @@ function filterByType() {
 </script>
 
 <template>
-    <div v-for="type in shopStore.types" :key="type">
-        <label :for="type">{{type}}</label>
-        <input type="checkbox" :id="type" :value="type" @change="filterByType" v-model="selectedTypes">
+    <div>
+        <div v-for="type in shopStore.types" :key="type">
+            <label :for="type">{{type}}</label>
+            <input type="checkbox" :id="type" :value="type" @change="filterByType" v-model="selectedTypes">
+        </div>
+        <ShopList />
     </div>
-    <ShopList />
 </template>

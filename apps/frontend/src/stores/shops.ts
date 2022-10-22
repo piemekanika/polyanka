@@ -26,10 +26,10 @@ export const useStoreShops = defineStore('shops', {
         },
 
         filterByTypes(types: string[]) {
-            api.getShopsByTypes({"types": types})
+            api.getShops({"types": types})
                 .then(({ shops }) => {
                     this.shops = shops;
                 });
-        }
+        },
     },
 });

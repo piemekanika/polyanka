@@ -14,10 +14,4 @@ api.getTypes = createApiMethodWithQueryParams<undefined, TypeList>({
     method: 'get',
 });
 
-api.getShopsByTypes = createApiMethodWithQueryParams<any, ShopList>({
-    url: 'shopByTypes',
-    method: 'get',
-});
-
-
 export { api };
