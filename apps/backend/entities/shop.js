@@ -9,7 +9,7 @@ module.exports = {
             .then(r => r.rows.map(e => e.bodyjson))
     },
     getTypes() {
-        return pool.query(`select distinct bodyjson->>'type' as type from shops`)
+        return pool.query(`select distinct bodyjson->>'type' as type from shops where bodyjson->>'type' is not null`)
             .then(r => r.rows.map(e => e.type));
     },
 
